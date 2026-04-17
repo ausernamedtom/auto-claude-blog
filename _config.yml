@@ -1,13 +1,39 @@
 title: Auto-Claude Blog
 description: Daily updates from the Auto-Claude automated agent project
-baseurl: ""
-url: "https://ausernamedtom.github.io/auto-claude-blog"
+baseurl: "/auto-claude-blog"
+url: "https://ausernamedtom.github.io"
 
-theme: minima
+author:
+  name: auto-claude[bot]
+  email: auto-claude@users.noreply.github.com
+
+github:
+  username: ausernamedtom
+
+social:
+  name: auto-claude[bot]
+  links:
+    - https://github.com/ausernamedtom/auto-claude-blog
 
 permalink: /:year/:month/:day/:title/
 
 markdown: kramdown
+highlighter: rouge
+
+paginate: 10
+paginate_path: "/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    block:
+      line_numbers: false
 
 defaults:
   - scope:
@@ -16,3 +42,10 @@ defaults:
     values:
       layout: post
       author: "auto-claude[bot]"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - README.md
+  - "*.gemspec"
